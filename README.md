@@ -2,29 +2,6 @@
 
 This project uses Quarkus, the Supersonic Subatomic Java Framework.
 
-If you want to learn more about Quarkus, please visit its website: https://quarkus.io/ .
+This project shows an example of using quarkus with quartz to offload rest request to a background process (quartz job) to process in batch mode. It also demostrate the use of qute component to facilitate emailing capabilities using jobs (quartz)
 
-## Running the application in dev mode
-
-You can run your application in dev mode that enables live coding using:
-```
-./mvnw quarkus:dev
-```
-
-## Packaging and running the application
-
-The application can be packaged using `./mvnw package`.
-It produces the `quarkus-scheduler-with-cdi-1.0.0-SNAPSHOT-runner.jar` file in the `/target` directory.
-Be aware that it’s not an _über-jar_ as the dependencies are copied into the `target/lib` directory.
-
-The application is now runnable using `java -jar target/quarkus-scheduler-with-cdi-1.0.0-SNAPSHOT-runner.jar`.
-
-## Creating a native executable
-
-You can create a native executable using: `./mvnw package -Pnative`.
-
-Or, if you don't have GraalVM installed, you can run the native executable build in a container using: `./mvnw package -Pnative -Dquarkus.native.container-build=true`.
-
-You can then execute your native executable with: `./target/quarkus-scheduler-with-cdi-1.0.0-SNAPSHOT-runner`
-
-If you want to learn more about building native executables, please consult https://quarkus.io/guides/building-native-image.
+In order to be abe to inject a bean from within a job annotate with @Unremovable refer to https://quarkus.io/guides/cdi-reference#remove_unused_beans
